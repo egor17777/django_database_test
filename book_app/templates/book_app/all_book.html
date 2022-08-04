@@ -1,0 +1,38 @@
+{% extends 'book_app/base.html' %}
+
+{% block title %} All books {% endblock %}
+
+{% load static %}
+
+{% block css_config %}
+    <link rel="stylesheet" href="{% static 'book_app/css/all_books.css' %}">
+{% endblock %}
+
+{% block content %} 
+    <h1> List all books</h1>
+
+    <ul>
+    {% for i in books %}
+    <li> Name = <a href = "{{i.get_url}}">{{i.title }}</a>, Raiting = {{i.raiting}},  Author = {{i.author|default:"No_author"}}</li>
+    
+    {% endfor %}
+    </ul>
+
+    <div>
+    <h3>Max rating: {{agg.rating__max}} </h3>
+    <h3>Min rating: {{agg.rating__min}}</h3>
+    <h3>Total films: {{agg.id__count}}</h3>
+    </div>
+    <form action="#">
+        <fieldset>
+          <legend>Контактная информация</legend>
+            <label for="title">Title book <em>*</em></label>
+            <input id="title"><br>
+            <label for="rating">Rating</label>
+            <input id="rating"><br>
+            <label for="author">Author <em>*</em></label>
+            <input id="author"><br>
+        </fieldset>
+        <p><input type="submit" value="Add book"></p>
+    </form>
+{% endblock %}  

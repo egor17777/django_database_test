@@ -1,0 +1,11 @@
+{% extends 'book_app/base.html' %}
+
+{% block title %} fdsfdsfsd {% endblock %}
+
+{% block content %} 
+    <h1> Info book: "{{book.title}}"</h1>
+    <h2>Title: {{book.title}}</h2>
+    <h2>Rating: {{book.rating}}</h2>
+    <h2>Author: {{book.author|default:"No_author"}}</h2>
+    
+{% endblock %}  

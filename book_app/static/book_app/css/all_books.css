@@ -1,0 +1,45 @@
+html{
+    background-color: cadetblue;
+}
+h1{
+    color: #e8dede;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 48px;
+    text-decoration: underline;
+}
+div{
+    background-color: brown;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 48px;
+    margin: 2rem auto;
+    max-width:50%;
+
+}
+
+ul{
+    -webkit-coLlumn-count: 2;
+    -moz-column-count: 2;
+    column-count: 1;
+    List-style-type: none;
+    background-color: #f1f1f1;
+    width: 90%;
+
+    max-width: 95%;
+    border-radius: 20px;
+    margin: 2rem auto;
+
+    padding: 1px;
+}
+
+ul li{
+    text-align: center;
+    width: 100%;
+    font-size: 3rem;
+    padding: 2rem 0rem;
+}
+
+ul a:hover, ul a:active{
+    color: coral;
+}
