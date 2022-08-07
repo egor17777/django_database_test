@@ -1,11 +1,12 @@
 from django.contrib import admin
 from django.template import Origin
-from .models import Book, Author, Hero
+from .models import Book, Author, Hero, PublishingRoom
 from django.db.models import QuerySet
 # Register your models here.
 
 admin.site.register(Author)
 admin.site.register(Hero)
+admin.site.register(PublishingRoom)
 
 
 class Rating_filter(admin.SimpleListFilter):

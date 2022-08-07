@@ -7,6 +7,17 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 
+
+class PublishingRoom(models.Model):
+    floor = models.IntegerField()
+    number = models.IntegerField()
+
+
+
+    def __str__(self) -> str:
+        return f"{self.floor}  {self.number}"
+
+
 class Hero(models.Model):
     MALE = "M"
     FEMALE = "F"
@@ -34,7 +45,7 @@ class Author(models.Model):
     first_name = models.CharField(max_length=40, null=True, blank= True)
     last_name = models.CharField(max_length=40, null=True, blank= True)
     author_mail = models.EmailField(null=True, blank= True)
-
+    publishing = models.OneToOneField(PublishingRoom, on_delete=models.SET_NULL, null = True, blank= True)
 
 
     def get_url(self):
