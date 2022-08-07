@@ -1,8 +1,12 @@
 from django.contrib import admin
 from django.template import Origin
-from .models import Book
+from .models import Book, Author, Hero
 from django.db.models import QuerySet
 # Register your models here.
+
+admin.site.register(Author)
+admin.site.register(Hero)
+
 
 class Rating_filter(admin.SimpleListFilter):
     title = "Filter for rating"
@@ -31,12 +35,13 @@ class Rating_filter(admin.SimpleListFilter):
 class BookAdmin(admin.ModelAdmin):
     #exclude = ['slug']
     prepopulated_fields = {"slug" : ('title', )}
-    list_display = ['title', 'rating', 'origin', 'author', 'rating_status']
+    list_display = ['title', 'rating', 'origin', 'rating_status', 'author']
     list_editable = ['rating', 'origin', 'author']
     ordering = ['-rating', 'title']
     actions = ['set_europe', 'set_usa']
-    search_fields = ['title', 'author']
-    list_filter = ['title', 'author', Rating_filter]
+    search_fields = ['title']
+    list_filter = ['title', Rating_filter]
+    filter_horizontal = ['hero']
 
     @admin.display(ordering= '-rating', description= 'Stats')
     def rating_status(self, mov:Book):

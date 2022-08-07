@@ -1,0 +1,18 @@
+{% extends 'book_app/base.html' %}
+
+{% block title %} Hero {% endblock %}
+
+{% block content %} 
+    <h1>Name hero: {{hero.name_hero}}</h1>
+    <h1>Type hero: {{hero.type_hero}}</h1>
+    <h2>Genger: {{hero.gender}}</h2>
+    <h2>Age: {{hero.age_hero}}</h2>
+
+    <h1>List books</h1>
+    <ul>
+        {% for book in hero.book_set.all %}
+            <h2>{{book}}</h2>
+        {% endfor %}
+    </ul>
+    
+{% endblock %}  

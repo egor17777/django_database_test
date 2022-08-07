@@ -1,0 +1,14 @@
+{% extends 'book_app/base.html' %}
+
+{% block title %} Author {% endblock %}
+
+{% block content %} 
+    <h1>Firs name: {{author.first_name}}</h1>
+    <h1>Last name: {{author.last_name}}</h1>
+    <h2>Author mail: {{author.author_mail}}</h2>
+    <hr>
+    <h3>Books written by the author {{author}} </h3>
+    {% for book in author.book_set.all %}
+        <li>{{book}}</li>
+    {% endfor %}
+{% endblock %}  

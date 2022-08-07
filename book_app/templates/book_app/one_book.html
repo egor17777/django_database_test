@@ -6,6 +6,15 @@
     <h1> Info book: "{{book.title}}"</h1>
     <h2>Title: {{book.title}}</h2>
     <h2>Rating: {{book.rating}}</h2>
-    <h2>Author: {{book.author|default:"No_author"}}</h2>
+
+    <h1>Info for author</h1>
+    <h2>Name: {{book.author.first_name}}</h2>
+    <h2>Surname: {{book.author.last_name}}</h2>
+    <h2>Mail: {{book.author.author_mail}}</h2>
+
+    <h1>Info for heroes</h1>
+    {% for hero in book.hero.all %}
+    <h2>{{hero}}</h2>
+    {% endfor %}
     
 {% endblock %}  
