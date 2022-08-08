@@ -1,11 +1,15 @@
 {% extends 'book_app/base.html' %}
-
+{% load static %}
 {% block title %} All books {% endblock %}
 
 {% load static %}
 
 {% block css_config %}
     <link rel="stylesheet" href="{% static 'book_app/css/all_books.css' %}">
+{% endblock %}
+
+{% block js_config %}
+    <script src="{% static 'book_app/js/script.js' %}"></script>
 {% endblock %}
 
 {% block content %} 
